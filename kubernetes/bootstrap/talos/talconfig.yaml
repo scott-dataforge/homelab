@@ -6,7 +6,7 @@ talosVersion: v1.9.1
 kubernetesVersion: v1.32.0
 
 clusterName: "home-kubernetes"
-endpoint: https://:6443
+endpoint: https://192.168.0.102:6443
 
 clusterPodNets:
   - "10.69.0.0/16"
@@ -14,7 +14,7 @@ clusterSvcNets:
   - "10.96.0.0/16"
 
 additionalApiServerCertSans: &sans
-  - ""
+  - "192.168.0.102"
   - "127.0.0.1"
 additionalMachineCertSans: *sans
 
@@ -39,7 +39,7 @@ nodes:
             gateway: "192.168.0.1"
         mtu: 1500
         vip:
-          ip: ""
+          ip: "192.168.0.102"
 
 # Global patches
 patches:
